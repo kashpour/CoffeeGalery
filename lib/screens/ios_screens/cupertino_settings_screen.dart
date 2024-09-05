@@ -38,7 +38,6 @@ class _CupertinoSettingsScreenState extends State<CupertinoSettingsScreen> {
           "Settings",
           style: TextStyle(
             fontSize: 28.0,
-            color: Colors.white,
           ),
         ),
       ),

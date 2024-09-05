@@ -50,7 +50,6 @@ class _CupertinoHomeScreenState extends State<CupertinoHomeScreen> {
             "Cafe Galery",
             style: TextStyle(
               fontSize: 28.0,
-              color: Colors.white,
             ),
           ),
         ),

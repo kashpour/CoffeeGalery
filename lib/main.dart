@@ -35,10 +35,18 @@ class _MyAppState extends State<MyApp> {
         themeMode: _themeMode,
         home: const HomeScreen(),
       );
-    } else {
-      return const CupertinoApp(
-        home: CupertinoEntryScreen(),
+    } else if (Platform.isIOS) {
+      return CupertinoApp(
+        theme: CupertinoThemeData(
+          applyThemeToAll: true,
+          brightness: Brightness.dark,
+          primaryColor: Colors.black,
+          barBackgroundColor: Colors.indigo[400],
+        ),
+        home: const CupertinoEntryScreen(),
       );
+    } else {
+      return Container();
     }
   }
 
