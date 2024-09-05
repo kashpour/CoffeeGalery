@@ -139,6 +139,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
+  pull_down_button:
+    dependency: "direct main"
+    description:
+      name: pull_down_button
+      sha256: "96d0a869c460318cc30b6ce3773b3c5d26291e8a1f93f358c826e14bc13e266a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.10.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -210,4 +218,4 @@ packages:
     version: "14.2.4"
 sdks:
   dart: ">=3.5.0 <4.0.0"
-  flutter: ">=3.18.0-18.0.pre.54"
+  flutter: ">=3.19.0"

@@ -1,4 +1,5 @@
 import 'package:coffee_galery/screens/details_screen.dart';
+import 'package:coffee_galery/shared/custom_bottom_navigation.dart';
 import 'package:coffee_galery/util.dart';
 import 'package:flutter/material.dart';
 
@@ -11,13 +12,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool isGV = true;
-
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     int itemCount = 100;
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      bottomNavigationBar: customButtomNavigation(context, 0),
       appBar: AppBar(
         actions: [
           PopupMenuButton(
@@ -57,33 +59,62 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SizedBox(
           width: width,
           height: height,
-          child: GridView.builder(
-            padding: const EdgeInsets.all(7.0),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisSpacing: 7.0,
-              crossAxisSpacing: 7.0,
-              crossAxisCount: 2,
-            ),
-            itemCount: itemCount,
-            itemBuilder: (BuildContext context, int index) {
-              return GestureDetector(
-                onTap: () {
-                  changeRoute(context, '${Util.images[index % 8]}$index',
-                      Util.images[index % 8], index);
-                },
-                child: Util.buildHeroAnimation(
-                    '${Util.images[index % 8]}$index',
-                    SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset(
-                        Util.images[index % 8],
-                        fit: BoxFit.cover,
+          child: isGV
+              ? GridView.builder(
+                  padding: const EdgeInsets.all(7.0),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    mainAxisSpacing: 7.0,
+                    crossAxisSpacing: 7.0,
+                    crossAxisCount: 2,
+                  ),
+                  itemCount: itemCount,
+                  itemBuilder: (BuildContext context, int index) {
+                    return GestureDetector(
+                      onTap: () {
+                        changeRoute(context, '${Util.images[index % 8]}$index',
+                            Util.images[index % 8], index);
+                      },
+                      child: Util.buildHeroAnimation(
+                          '${Util.images[index % 8]}$index',
+                          SizedBox(
+                            width: 100,
+                            height: 100,
+                            child: Image.asset(
+                              Util.images[index % 8],
+                              fit: BoxFit.cover,
+                            ),
+                          )),
+                    );
+                  },
+                )
+              : ListView.builder(
+                  padding: const EdgeInsets.all(7.0),
+                  itemCount: itemCount,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          changeRoute(
+                              context,
+                              '${Util.images[index % 8]}$index',
+                              Util.images[index % 8],
+                              index);
+                        },
+                        child: Util.buildHeroAnimation(
+                            '${Util.images[index % 8]}$index',
+                            SizedBox(
+                              width: 100,
+                              height: 300,
+                              child: Image.asset(
+                                Util.images[index % 8],
+                                fit: BoxFit.cover,
+                              ),
+                            )),
                       ),
-                    )),
-              );
-            },
-          )),
+                    );
+                  },
+                )),
     );
   }
 
