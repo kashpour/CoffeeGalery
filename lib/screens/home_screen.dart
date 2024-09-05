@@ -2,8 +2,15 @@ import 'package:coffee_galery/screens/details_screen.dart';
 import 'package:coffee_galery/util.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool isGV = true;
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +19,32 @@ class HomeScreen extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          PopupMenuButton(
+              icon: Icon(
+                isGV ? Icons.grid_view : Icons.view_list_rounded,
+                size: 34.0,
+                color: Colors.white,
+              ),
+              itemBuilder: (BuildContext context) {
+                return [
+                  PopupMenuItem(
+                      onTap: () {
+                        setState(() {
+                          isGV = true;
+                        });
+                      },
+                      child: const Text("GridView")),
+                  PopupMenuItem(
+                      onTap: () {
+                        setState(() {
+                          isGV = false;
+                        });
+                      },
+                      child: const Text("ListView")),
+                ];
+              })
+        ],
         backgroundColor: Colors.indigo,
         title: const Text(
           "Coffee Galery",
