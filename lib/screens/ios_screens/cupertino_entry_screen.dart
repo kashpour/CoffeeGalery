@@ -1,5 +1,5 @@
-import 'package:coffee_galery/screens/cupertino_home_screen.dart';
-import 'package:coffee_galery/screens/cupertino_settings_screen.dart';
+import 'package:coffee_galery/screens/ios_screens/cupertino_home_screen.dart';
+import 'package:coffee_galery/screens/ios_screens/cupertino_settings_screen.dart';
 import 'package:flutter/cupertino.dart';
 
 class CupertinoEntryScreen extends StatefulWidget {

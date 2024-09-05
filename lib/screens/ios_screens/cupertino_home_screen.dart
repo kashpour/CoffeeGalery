@@ -1,4 +1,4 @@
-import 'package:coffee_galery/screens/details_screen.dart';
+import 'package:coffee_galery/screens/andriod_screens/details_screen.dart';
 import 'package:coffee_galery/util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

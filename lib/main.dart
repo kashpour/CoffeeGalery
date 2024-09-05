@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:coffee_galery/screens/cupertino_entry_screen.dart';
-import 'package:coffee_galery/screens/home_screen.dart';
+import 'package:coffee_galery/screens/ios_screens/cupertino_entry_screen.dart';
+import 'package:coffee_galery/screens/andriod_screens/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -1,5 +1,5 @@
-import 'package:coffee_galery/screens/details_screen.dart';
-import 'package:coffee_galery/shared/custom_bottom_navigation.dart';
+import 'package:coffee_galery/screens/andriod_screens/details_screen.dart';
+import 'package:coffee_galery/screens/andriod_screens/shared/custom_bottom_navigation.dart';
 import 'package:coffee_galery/util.dart';
 import 'package:flutter/material.dart';
 

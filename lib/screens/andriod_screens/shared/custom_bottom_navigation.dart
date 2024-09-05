@@ -1,5 +1,5 @@
-import 'package:coffee_galery/screens/home_screen.dart';
-import 'package:coffee_galery/screens/settings_screen.dart';
+import 'package:coffee_galery/screens/andriod_screens/home_screen.dart';
+import 'package:coffee_galery/screens/andriod_screens/settings_screen.dart';
 import 'package:flutter/material.dart';
 
 BottomNavigationBar customButtomNavigation(BuildContext context, int index) {

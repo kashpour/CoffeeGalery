@@ -1,5 +1,5 @@
 import 'package:coffee_galery/main.dart';
-import 'package:coffee_galery/shared/custom_bottom_navigation.dart';
+import 'package:coffee_galery/screens/andriod_screens/shared/custom_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatefulWidget {
