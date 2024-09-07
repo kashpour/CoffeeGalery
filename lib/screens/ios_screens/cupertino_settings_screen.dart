@@ -1,3 +1,4 @@
+import 'package:coffee_galery/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,20 +19,28 @@ class _CupertinoSettingsScreenState extends State<CupertinoSettingsScreen> {
         trailing: IconButton(
             onPressed: () {
               if (isDarkMode) {
-                isDarkMode = false;
+                setState(() {
+                  MyApp.of(context).changeThemeIOS(
+                    const CupertinoThemeData(brightness: Brightness.light),
+                  );
+                  isDarkMode = false;
+                });
               } else {
-                isDarkMode = true;
+                setState(() {
+                  MyApp.of(context).changeThemeIOS(
+                      const CupertinoThemeData(brightness: Brightness.dark));
+                  isDarkMode = true;
+                });
               }
-              setState(() {});
             },
             icon: isDarkMode
                 ? const Icon(
-                    Icons.dark_mode,
-                    color: Colors.black,
-                  )
-                : const Icon(
                     Icons.light_mode,
                     color: Colors.white,
+                  )
+                : const Icon(
+                    Icons.dark_mode,
+                    color: Colors.black,
                   )),
         backgroundColor: Colors.indigo,
         middle: const Text(

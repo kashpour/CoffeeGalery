@@ -11,6 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool isDarkMode = false;
   bool isGV = true;
   int currentIndex = 0;
   @override
@@ -26,7 +27,9 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: Icon(
                 isGV ? Icons.grid_view : Icons.view_list_rounded,
                 size: 34.0,
-                color: Colors.white,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white
+                    : Colors.black,
               ),
               itemBuilder: (BuildContext context) {
                 return [
@@ -48,11 +51,14 @@ class _HomeScreenState extends State<HomeScreen> {
               })
         ],
         backgroundColor: Colors.indigo,
-        title: const Text(
+        title: Text(
           "Coffee Galery",
           style: TextStyle(
             fontSize: 28.0,
-            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.white
+                : Colors.black,
           ),
         ),
       ),

@@ -12,10 +12,17 @@ class CupertinoHomeScreen extends StatefulWidget {
 }
 
 class _CupertinoHomeScreenState extends State<CupertinoHomeScreen> {
+  bool isDarkMode = false;
   bool isGV = true;
   int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
+    if (CupertinoTheme.of(context).brightness == Brightness.dark) {
+      isDarkMode = true;
+    } else {
+      isDarkMode = false;
+    }
     int itemCount = 100;
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
@@ -41,10 +48,8 @@ class _CupertinoHomeScreenState extends State<CupertinoHomeScreen> {
               buttonBuilder: (context, showMenu) => CupertinoButton(
                   padding: EdgeInsets.zero,
                   onPressed: showMenu,
-                  child: const Icon(
-                    CupertinoIcons.ellipsis_circle,
-                    color: Colors.white,
-                  ))),
+                  child: Icon(CupertinoIcons.ellipsis_circle,
+                      color: isDarkMode ? Colors.white : Colors.black))),
           backgroundColor: Colors.indigo,
           middle: const Text(
             "Cafe Galery",

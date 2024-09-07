@@ -21,6 +21,11 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   ThemeMode _themeMode = ThemeMode.system;
+  CupertinoThemeData _themeDataIOS = CupertinoThemeData(
+    applyThemeToAll: true,
+    primaryColor: Colors.black,
+    barBackgroundColor: Colors.indigo[400],
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +33,7 @@ class _MyAppState extends State<MyApp> {
       return MaterialApp(
         theme: ThemeData(
           brightness: Brightness.light,
+          primaryColor: Colors.black,
         ),
         darkTheme: ThemeData(
           brightness: Brightness.dark,
@@ -37,12 +43,7 @@ class _MyAppState extends State<MyApp> {
       );
     } else if (Platform.isIOS) {
       return CupertinoApp(
-        theme: CupertinoThemeData(
-          applyThemeToAll: true,
-          brightness: Brightness.dark,
-          primaryColor: Colors.black,
-          barBackgroundColor: Colors.indigo[400],
-        ),
+        theme: _themeDataIOS,
         home: const CupertinoEntryScreen(),
       );
     } else {
@@ -53,6 +54,12 @@ class _MyAppState extends State<MyApp> {
   void changeTheme(ThemeMode themeMode) {
     setState(() {
       _themeMode = themeMode;
+    });
+  }
+
+  void changeThemeIOS(CupertinoThemeData themeDataIOS) {
+    setState(() {
+      _themeDataIOS = themeDataIOS;
     });
   }
 }

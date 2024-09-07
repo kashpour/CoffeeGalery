@@ -18,11 +18,21 @@ class DetailsScreen extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(
+          size: 34.0,
+          color: Theme.of(context).brightness == Brightness.dark
+              ? Colors.white
+              : Colors.black,
+        ),
         backgroundColor: Colors.indigo,
-        title: const Text(
+        title: Text(
           "Item Details",
-          style: TextStyle(fontSize: 28.0, color: Colors.white),
+          style: TextStyle(
+            fontSize: 28.0,
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.white
+                : Colors.black,
+          ),
         ),
       ),
       body: Center(

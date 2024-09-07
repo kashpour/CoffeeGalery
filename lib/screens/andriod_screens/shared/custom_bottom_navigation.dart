@@ -15,8 +15,22 @@ BottomNavigationBar customButtomNavigation(BuildContext context, int index) {
               MaterialPageRoute(builder: (context) => const SettingsScreen()));
         }
       },
-      items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
+      items: [
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.white
+                  : Colors.black,
+            ),
+            label: "Home"),
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.settings,
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.white
+                  : Colors.black,
+            ),
+            label: "Settings"),
       ]);
 }

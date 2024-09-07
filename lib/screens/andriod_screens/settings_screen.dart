@@ -42,14 +42,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 },
                 icon: isDarkMode
                     ? const Icon(
-                        Icons.dark_mode,
-                        size: 34.0,
-                        color: Colors.black,
-                      )
-                    : const Icon(
                         Icons.light_mode,
                         size: 34.0,
                         color: Colors.white,
+                      )
+                    : const Icon(
+                        Icons.dark_mode,
+                        size: 34.0,
+                        color: Colors.black,
                       )),
           )
         ],
