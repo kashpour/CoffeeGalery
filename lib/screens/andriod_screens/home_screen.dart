@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         backgroundColor: Colors.indigo,
         title: Text(
-          "Coffee Galery",
+          "Cafe Galery",
           style: TextStyle(
             fontSize: 28.0,
             fontWeight: FontWeight.bold,
