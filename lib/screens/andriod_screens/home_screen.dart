@@ -1,3 +1,4 @@
+import 'package:coffee_galery/constants/app_images.dart';
 import 'package:coffee_galery/screens/andriod_screens/details_screen.dart';
 import 'package:coffee_galery/screens/andriod_screens/shared/custom_bottom_navigation.dart';
 import 'package:coffee_galery/util.dart';
@@ -126,56 +127,56 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void changeRoute(BuildContext context, String tag, String path, int index) {
     switch (path) {
-      case './assets/1.jpg':
+      case AppImages.images1:
         Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) =>
                     DetailsScreen(itemPath: path, itemTag: tag, index: index)));
         break;
-      case './assets/2.jpg':
+      case AppImages.images2:
         Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) =>
                     DetailsScreen(itemPath: path, itemTag: tag, index: index)));
         break;
-      case './assets/3.jpg':
+      case AppImages.images3:
         Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) =>
                     DetailsScreen(itemPath: path, itemTag: tag, index: index)));
         break;
-      case './assets/4.jpg':
+      case AppImages.images4:
         Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) =>
                     DetailsScreen(itemPath: path, itemTag: tag, index: index)));
         break;
-      case './assets/5.jpg':
+      case AppImages.images5:
         Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) =>
                     DetailsScreen(itemPath: path, itemTag: tag, index: index)));
         break;
-      case './assets/6.jpg':
+      case AppImages.images6:
         Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) =>
                     DetailsScreen(itemPath: path, itemTag: tag, index: index)));
         break;
-      case './assets/7.jpg':
+      case AppImages.images7:
         Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) =>
                     DetailsScreen(itemPath: path, itemTag: tag, index: index)));
         break;
-      case './assets/8.jpg':
+      case AppImages.images8:
         Navigator.push(
             context,
             MaterialPageRoute(
